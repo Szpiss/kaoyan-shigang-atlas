@@ -4653,5 +4653,27 @@ renderCompare();
 renderQuiz();
 setView('timeline');
 </script>
+<script id="site-analytics-loader">
+/* Cloudflare Web Analytics: Only track page loads on this published site. */
+(function () {
+  'use strict';
+  if (location.protocol !== 'https:' || location.hostname !== 'szpiss.github.io') return;
+  var allowedPaths = [
+    '/kaoyan-shigang-atlas/', '/kaoyan-shigang-atlas/index.html'
+  ];
+  if (allowedPaths.indexOf(location.pathname) === -1) return;
+  if (navigator.globalPrivacyControl === true || navigator.doNotTrack === '1' || window.doNotTrack === '1') return;
+  if (document.getElementById('cloudflare-web-analytics')) return;
+  var siteToken = 'f0ecbcc47396473bae3dae0b9cf30489';
+  if (!/^[a-f0-9]{32}$/i.test(siteToken) || /^0+$/.test(siteToken)) return;
+  var beacon = document.createElement('script');
+  beacon.id = 'cloudflare-web-analytics';
+  beacon.type = 'module';
+  beacon.async = true;
+  beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  beacon.setAttribute('data-cf-beacon', JSON.stringify({token: siteToken, spa: false}));
+  document.body.appendChild(beacon);
+}());
+</script>
 </body>
 </html>
